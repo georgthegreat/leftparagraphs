@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+	<head>
+{% include "components/head.html" %}	
+		<title>.руЛевые – Моё!</title>
+	</head>
+	<body>
+{% include "components/header.html" %}	
+{% set menuItem = "my" %}
+{% include "components/menu.html" %}
+		<div class="content">
+			<h1>Моё!</h1>
+
+			<h3>Impression</h3>
+			<p>Слово &lt;impression&gt; в переводе с французского означает «впечатление». Цель – сделать одну работу, которая отражала бы мое впечатление на творчество того или иного художника. Встречаем.</p>
+			<div class="center">
+{% for fullFilename, previewFilename, description in impressionImages %}
+				<div class="gallery">
+					<div style="width: 200px">
+						<a class="image_link" href="/images/my/{{fullFilename}}">
+							<img width="200px" height="200px" alt="" src="/images/preview/{{previewFilename}}"/><br/>
+							<span>{{description}}</span>
+						</a>
+					</div>
+				</div>
+{% endfor %}
+			</div>
+			<hr/>
+
+			<h3>Март</h3>
+			<p>Март, весна, любовь, искусство, мажор, радость, игра, свет, дизайн, штуки, смысл, правда, цвет, чувство, улыбка, вещь, вечность, нежность, дружба, слово, обещание, встреча, мысль, точность, индивидуальность, солнце, смех. Уже здесь.</p>
+			<div class="center">
+{% for fullFilename, previewFilename, description in marchImages %}
+				<div class="gallery">
+					<div style="width: 200px">
+						<a class="image_link" href="/images/my/{{fullFilename}}">
+							<img width="200px" height="200px" alt="" src="/images/preview/{{previewFilename}}"/><br/>
+							<span>{{description}}</span>
+						</a>
+					</div>
+				</div>
+{% endfor %}
+			</div>
+			<hr/>
+
+			<h3>Великий photop</h3>
+			<p>Судью – на мыло.</p>
+			<div class="center">
+{% for fullFilename, previewFilename, description in photopImages %}
+				<div class="gallery">
+					<div style="width: 200px">
+						<a class="image_link" href="/images/my/{{fullFilename}}">
+							<img width="200px" height="200px" alt="" src="/images/preview/{{previewFilename}}"/><br/>
+							<span>{{description}}</span>
+						</a>
+					</div>
+				</div>
+{% endfor %}
+			</div>
+			<hr/>
+
+			<h3>Drugое</h3>
+			<p>Дальше – больше. Абсолютное противоречие со всеми мыслимыми законами перспективы.</p>
+			<div class="center">
+{% for fullFilename, previewFilename, description in drugoeImages %}
+				<div class="gallery">
+					<div style="width: 200px">
+						<a class="image_link" href="/other/{{fullFilename}}">
+							<img width="200px" height="200px" alt="" src="/images/preview/{{previewFilename}}"/><br/>
+							<span>{{description}}</span>
+						</a>
+					</div>
+				</div>
+{% endfor %}
+			</div>
+			<hr/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,5 @@
+#robots.txt for http://georg.iley.ru
+
+User-agent: WDG_SiteValidator
+#this should not be validated
+Disallow: /rss

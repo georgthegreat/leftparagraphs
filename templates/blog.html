@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+	<head>
+{% include "components/head.html" %}	
+		<title>.руЛевые - We Blog</title>
+	</head>
+	<body>
+{% include "components/header.html" %}	
+{% set menuItem = "blog" %}
+{% include "components/menu.html" %}
+		<div class="center content">
+			<h1 style="padding-bottom: 20px;">We Blog</h1>
+{% for height, width, data in blogImages %}
+			<img class="blog_img" width="{{width}}px" height="{{height}}px" alt="" src="data:image/png;base64,{{data}}"/><hr/>
+{% endfor %}
+		</div>
+	</body>
+</html>

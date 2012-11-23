@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>.руЛевые</title>
+		<description>Заметки о верстке, дизайне, красоте и радости жизни</description>
+		<link>http://leftparagraphs.com/index.html</link>
+		<lastBuildDate>Sun, 30 Aug 2012 00:00:00 +0300</lastBuildDate>
+		<pubDate>Sun, 30 Aug 2012 00:00:00 +0300</pubDate>
+		<atom:link href="http://leftparagraphs.com/rss/paragraphs.xml" rel="self" type="application/rss+xml"/>
+{% for index, title, description, pubdate in paragraphs %}
+		<item>
+			<title>§{{index|int}}. {{title}}</title>
+			<description>{{description}}</description>
+			<link>http://leftparagraphs.com/paragraphs/{{index}}.html</link>
+			<guid>http://leftparagraphs.com/paragraphs/{{index}}.html</guid>
+			<pubDate>{{pubdate}}</pubDate>
+		</item>
+{% endfor %}
+	</channel>
+</rss>

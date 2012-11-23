@@ -1,0 +1,118 @@
+{#
+	Используем следующие идентификаторы для пунктов меню
+	index: index.html
+	blog: blog.html
+	my: my.html
+	celtic: celtic.html
+	about: about.html
+#}
+{% if menuItem == "index" %}
+		<ul id="menu">
+			<li class="active">
+				<span>Список параграфов</span>
+			</li>
+			<li class="inactive">
+				<a href="/blog.html">We Blog</a>
+			</li>
+			<li class="inactive">
+				<a href="/my.html">Моё!</a>
+			</li>
+			<li class="inactive">
+				<a href="/celtic.html">Кельтская новь</a>
+			</li>
+			<li class="inactive">
+				<a href="/about.html">Обо мне</a>
+			</li>
+		</ul>
+{% elif menuItem == "blog" %}
+		<ul id="menu">
+			<li class="inactive">
+				<a href="/index.html">Список параграфов</a>
+			</li>
+			<li class="active">
+				<span>We Blog</span>
+			</li>
+			<li class="inactive">
+				<a href="/my.html">Моё!</a>
+			</li>
+			<li class="inactive">
+				<a href="/celtic.html">Кельтская новь</a>
+			</li>
+			<li class="inactive">
+				<a href="/about.html">Обо мне</a>
+			</li>
+		</ul>
+{% elif menuItem == "my" %}
+		<ul id="menu">
+			<li class="inactive">
+				<a href="/index.html">Список параграфов</a>
+			</li>
+			<li class="inactive">
+				<a href="/blog.html">We Blog</a>
+			</li>
+			<li class="active">
+				<span>Моё!</span>
+			</li>
+			<li class="inactive">
+				<a href="/celtic.html">Кельтская новь</a>
+			</li>
+			<li class="inactive">
+				<a href="/about.html">Обо мне</a>
+			</li>
+		</ul>
+{% elif menuItem == "celtic" %}
+		<ul id="menu">
+			<li class="inactive">
+				<a href="/index.html">Список параграфов</a>
+			</li>
+			<li class="inactive">
+				<a href="/blog.html">We Blog</a>
+			</li>
+			<li class="inactive">
+				<a href="/my.html">Моё!</a>
+			</li>
+			<li class="active">
+				<span>Кельтская новь</span>
+			</li>
+			<li class="inactive">
+				<a href="/about.html">Обо мне</a>
+			</li>
+		</ul>
+{% elif menuItem == "about" %}
+		<ul id="menu">
+			<li class="inactive">
+				<a href="/index.html">Список параграфов</a>
+			</li>
+			<li class="inactive">
+				<a href="/blog.html">We Blog</a>
+			</li>
+			<li class="inactive">
+				<a href="/my.html">Моё!</a>
+			</li>
+			<li class="inactive">
+				<a href="/celtic.html">Кельтская новь</a>
+			</li>
+			<li class="active">
+				<span>Обо мне</span>
+			</li>
+		</ul>
+{% else %}
+		<ul id="menu">
+			<li class="inactive">
+				<a href="/index.html">Список параграфов</a>
+			</li>
+			<li class="inactive">
+				<a href="/blog.html">We Blog</a>
+			</li>
+			<li class="inactive">
+				<a href="/my.html">Моё!</a>
+			</li>
+			<li class="inactive">
+				<a href="/celtic.html">Кельтская новь</a>
+			</li>
+			<li class="inactive">
+				<a href="/about.html">Обо мне</a>
+			</li>
+		</ul>
+{% endif %}
+

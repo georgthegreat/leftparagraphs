@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+	<head>
+{% include "components/head.html" %}
+{% set minProgram = 1 %}
+{% set maxProgram = programs|length %}
+{% set textIndex = "%03d"%intIndex %}
+{% set index, title, description, pubdate, filesize, folkradio_filename = programs[intIndex - 1] %}
+		<title>Кельтская новь – {{intIndex}}. {{title}}</title>
+	</head>
+	<body>
+{% include "components/header.html" %}
+{% include "components/menu.html" %}
+		<div class="center">
+			<img src="/images/celtic.png" width="800px" height="268px" alt=""/>		
+			<h1>{{intIndex}}. {{title}}</h1>
+			<div class="text">
+				<a href="http://folkradio.ru/keltskayanov/{{folkradio_filename}}.mp3">Скачать передачу</a>
+{% set address = "celtic/" + index + ".html" %}
+{% include address %}
+				<a href="http://folkradio.ru/keltskayanov/{{folkradio_filename}}.mp3">Скачать передачу</a>
+			</div>
+			<hr style="width: 90%"/>
+			<div class="center" id="navigation">
+{% for navIndex in range(intIndex - 4, intIndex + 4 + 1) %}
+{% if navIndex == intIndex %}
+				<span class="navigate2" style="background-color: #cc9900;">{{navIndex}}</span>
+{% elif (navIndex >= minProgram) and (navIndex <= maxProgram)  %}
+{% set index, title, description, pubdate, filesize, folkradio_filename = programs[navIndex - 1] %}
+				<a href="{{index}}.html" class="navigate2" title="{{title}}">{{navIndex}}</a>
+{% endif %}
+{% endfor %}
+				<a href="../celtic.html">Список передач</a>
+			</div>
+			<div class="navigate">
+{% if intIndex > minProgram %}
+				<a href="{{"%03d"%(intIndex - 1)}}.html" class="navigate" id="NextLink" title="Туда" rel="next">◄</a>
+{% endif %}
+				Ctrl
+{% if intIndex < maxProgram %}
+				<a href="{{"%03d"%(intIndex + 1)}}.html" class="navigate" id="NextLink" title="Туда" rel="next">►</a>
+{% endif %}
+			</div>
+		</div>
+	</body>
+</html>

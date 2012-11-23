@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="115"
+   height="115"
+   id="svg2"
+   inkscape:version="0.48.1 "
+   sodipodi:docname="icon_download_music.svg">
+  <metadata
+     id="metadata3017">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="975"
+     id="namedview3015"
+     showgrid="false"
+     inkscape:zoom="1.9545455"
+     inkscape:cx="42.3125"
+     inkscape:cy="55.375"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs5">
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       style="overflow:visible"
+       id="Arrow1Mstart">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         id="path3845"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       refX="0"
+       refY="0"
+       orient="auto"
+       style="overflow:visible"
+       id="Arrow2Lstart">
+      <path
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         id="path3833"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <path
+     d="m 58.968023,8.5806688 0,74.1945862 c -2.321708,-2.445447 -6.195845,-3.800734 -11.21875,-3.800733 -11.555201,0 -21.656249,8.131149 -21.65625,17.076534 0,6.840974 5.377057,10.251274 13.65625,10.251274 12.495147,0 21.601232,-8.389894 21.65625,-17.023004 1.67e-4,-0.02621 0,-0.05413 0,-0.08026 l 0,-60.035561 c 12.3039,5.524237 21.164464,11.032969 25.9375,19.03043 4.832911,8.097793 1.775129,19.309435 -11.375,29.549359 -0.336877,1.065551 0.206297,1.614911 1.15625,1.579177 C 100.46471,62.148905 96.689238,40.624165 75.468023,25.817795 68.552715,20.99288 63.520529,14.543044 61.405523,8.5806688 l -2.4375,0 z"
+     style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+     id="path1883"
+     inkscape:connector-curvature="0" />
+</svg>

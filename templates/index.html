@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+	<head>
+{% include "components/head.html" %}	
+		<title>.руЛевые – Список параграфов</title>
+	</head>
+	<body>
+{% include "components/header.html" %}	
+{% set menuItem = "index" %}
+{% include "components/menu.html" %}
+		<div class="content">
+			<h1>Список параграфов</h1>
+			<table cellpadding="10px">
+				<tr style="vertical-align: top;">
+					<td style="width: 1%;">
+						<img src="images/avatar01.png" height="155px" width="106px" style="margin: 10px 0px;" alt=""/>
+						<img src="images/avatar02.png" height="100px" width="100px" style="margin: 10px 50px;" alt=""/>
+						<a href="rss/paragraphs.xml" type="application/rss+xml" class="image_link">
+							<img src="images/avatar03.svg" height="115px" width="115px" style="margin: 10px 25px;" alt=""/>
+						</a>
+						<img src="images/avatar04.png" height="121px" width="150px" style="margin: 10px 25px;" alt=""/>
+					</td>
+					<td>
+{% for index, title, description, pubdate in paragraphs %}
+						<a href="paragraphs/{{index}}.html">§{{index|int}}. {{title}}</a><br/>
+{% endfor %}
+					</td>	
+				</tr>
+			</table>
+			<div class="center">
+				<hr/>
+				<div class="navigate">
+					<a href="rss/paragraphs.xml" title="rss" class="image_link" type="application/rss+xml">
+						<img src="/images/icons/rss.svg" width="24px" height="24px" alt="[rss]"/>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

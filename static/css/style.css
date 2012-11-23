@@ -1,0 +1,198 @@
+﻿/* importing fonts from google */
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&subset=latin,cyrillic);
+/* resetting default browser styles */
+@import url(/css/reset.css);
+
+body {
+	color: #000000;
+	background-color: #ffffff;
+	margin: 0px 0px 100px 0px;
+	font-size: 100%;
+    font-family: "PT Sans", sans-serif;
+}
+
+h1 {
+    font-size: 200%;
+    font-family: "PT Sans Caption", sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+h2 {
+	font-size: 135%;
+	font-family: "PT Sans Caption", sans-serif;
+	margin: 10px;
+	text-align: center;
+}
+
+h3 {
+    font-size: 120%;
+    font-family: "PT Sans Caption", sans-serif;
+    margin: 30px 10px 0px 10px;
+    text-align: center;
+}
+
+p {
+	text-align: left;
+	text-indent: 20px;
+	margin: 0px 0px 5px 0px;
+}
+
+img {
+ 	border: 0px;
+ 	vertical-align: middle;
+}
+
+a {
+	background-color: transparent;
+	color: #0088ff;
+	outline: none; 
+	text-decoration: underline;
+}
+
+a.action, a.image_link span.action {
+	text-decoration: none;
+	border-bottom: dashed 1px #0088ff;
+}
+
+a.image_link {
+	text-decoration: none;
+}
+
+a.image_link span {
+	text-decoration: underline;
+}
+
+
+hr {
+	width: 100%;
+	height: 2px;
+	border: none;
+	color: #000000;
+	background-color: #cccccc;
+}
+
+ul, ol {
+	text-align: left;
+	text-indent: 20px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+ul#menu li.inactive {
+	width: 20%;
+	float: left;
+	background-color: #cccccc;
+	color: #000000;
+}
+
+ul#menu li.active {
+	width: 20%;
+	float: left;
+	background-color: #888888;
+	color: #000000;
+}
+
+ul#menu li a, ul#menu li span  {
+	display: block;
+	padding: 0px 4px;
+	border-right: solid 1px #000000;
+	color: #000000;
+	line-height: 24px;
+}
+
+ul#menu li:last-child a, ul#menu li:last-child span {
+	border-right-width: 0px;
+}
+
+li img {
+	padding: 2px;
+}
+
+.epigraph  {
+	width: 1%;
+	text-align: left;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.navigate {
+    font-weight: 700;
+    color: #0088ff;
+	background-color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navigate2 {
+	display: inline-block;
+	width: 4%;
+	max-width: 40px;
+}
+
+
+.lyrics {
+	border: 1px solid #000000;
+	color: #000000;
+	background-color: #dddddd;
+	margin: 10px;
+	padding: 10px;
+}
+
+div.logo {
+	padding: 0px;
+	margin: 0px;
+	color: #000000;
+	background-color: #888888;
+	vertical-align: middle;
+	width: 100%;
+}
+
+div.logo  img {	
+	color: #000000;
+	background-color: #888888;
+	vertical-align: middle;
+	margin: 5px;
+}
+
+img.blog_img {
+	padding: 10px;
+	margin: 0px;
+}
+
+div.gallery {
+	display: inline-block; 
+	text-align: center; 
+	vertical-align: top; 
+	margin: 10px;
+	width: 200px;
+}
+
+.center {
+	text-align: center;
+}
+
+p.song {
+	text-indent: 30px;
+	font-style: italic;
+}
+
+p.poetry {
+	margin: 4px 50px;
+	font-style: italic;
+	text-indent: 0px;
+}
+
+.content {
+	margin: 0px auto;
+	width: 90%;
+}
+
+.text {
+	margin: 0px auto;
+	width: 90%;
+	max-width: 1200px;
+}
