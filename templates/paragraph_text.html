@@ -3,7 +3,7 @@
 	<head>
 {% include "components/head.html" %}
 {% set minParagraph = 0 %}
-{% set maxParagraph = paragraphs|length %}
+{% set maxParagraph = paragraphs|length - 1 %}
 {% set textIndex = "%03d"%intIndex %}
 {% set index, title, description, pubdate = paragraphs[intIndex] %}
 		<title>.руЛевые – {{intIndex}}. {{title}}</title>
@@ -21,7 +21,7 @@
 {% if navIndex == intIndex %}
 				<span class="navigate2" style="background-color: #cc9900;">{{navIndex}}</span>
 {% elif (navIndex >= minParagraph) and (navIndex <= maxParagraph)  %}
-{% set index, title, description, pubdate = paragraphs[navIndex - 1] %}
+{% set index, title, description, pubdate = paragraphs[navIndex] %}
 				<a href="{{index}}.html" class="navigate2" title="{{title}}">{{navIndex}}</a>
 {% endif %}
 {% endfor %}

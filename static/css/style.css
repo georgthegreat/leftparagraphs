@@ -122,17 +122,17 @@ li img {
 .navigate {
     font-weight: 700;
     color: #0088ff;
-	background-color: #ffffff;
     text-decoration: none;
     text-align: center;
+	line-height: 20px;
 }
 
 .navigate2 {
 	display: inline-block;
 	width: 4%;
+	line-height: 20px;
 	max-width: 40px;
 }
-
 
 .lyrics {
 	border: 1px solid #000000;
