@@ -14,13 +14,17 @@
 		<div class="center">
 			<img src="/images/celtic.png" width="800px" height="268px" alt=""/>		
 			<h1>{{intIndex}}. {{title}}</h1>
-			<div class="text">
+		</div>	
+		<div class="content">
+			<div class="center">
 				<a href="http://folkradio.ru/keltskayanov/{{folkradio_filename}}.mp3">Скачать передачу</a>
+			</div>	
 {% set address = "celtic/" + index + ".html" %}
 {% include address %}
+			<div class="center">
 				<a href="http://folkradio.ru/keltskayanov/{{folkradio_filename}}.mp3">Скачать передачу</a>
-			</div>
-			<hr style="width: 90%"/>
+			</div>	
+			<hr/>
 			<div class="center" id="navigation">
 {% for navIndex in range(intIndex - 4, intIndex + 4 + 1) %}
 {% if navIndex == intIndex %}
@@ -34,7 +38,7 @@
 			</div>
 			<div class="navigate">
 {% if intIndex > minProgram %}
-				<a href="{{"%03d"%(intIndex - 1)}}.html" class="navigate" id="NextLink" title="Туда" rel="next">◄</a>
+				<a href="{{"%03d"%(intIndex - 1)}}.html" class="navigate" id="PrevLink" title="Туда" rel="prev">◄</a>
 {% endif %}
 				Ctrl
 {% if intIndex < maxProgram %}

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+	<head>
+{% include "components/head.html" %}
+{% set minParagraph = 0 %}
+{% set maxParagraph = paragraphs|length %}
+{% set textIndex = "%03d"%intIndex %}
+{% set index, title, description, pubdate = paragraphs[intIndex] %}
+		<title>.руЛевые – {{intIndex}}. {{title}}</title>
+	</head>
+	<body>
+{% include "components/header.html" %}
+{% include "components/menu.html" %}
+		<div class="content">
+			<h1>{{intIndex}}. {{title}}</h1>
+{% set address = "paragraphs/" + index + ".html" %}
+{% include address %}
+			<hr/>
+			<div class="center" id="navigation">
+{% for navIndex in range(intIndex - 4, intIndex + 4 + 1) %}
+{% if navIndex == intIndex %}
+				<span class="navigate2" style="background-color: #cc9900;">{{navIndex}}</span>
+{% elif (navIndex >= minParagraph) and (navIndex <= maxParagraph)  %}
+{% set index, title, description, pubdate = paragraphs[navIndex - 1] %}
+				<a href="{{index}}.html" class="navigate2" title="{{title}}">{{navIndex}}</a>
+{% endif %}
+{% endfor %}
+				<a href="../index.html">Список передач</a>
+			</div>
+			<div class="navigate">
+{% if intIndex > minParagraph %}
+				<a href="{{"%03d"%(intIndex - 1)}}.html" class="navigate" id="PrevLink" title="Туда" rel="prev">◄</a>
+{% endif %}
+				Ctrl
+{% if intIndex < maxParagraph %}
+				<a href="{{"%03d"%(intIndex + 1)}}.html" class="navigate" id="NextLink" title="Туда" rel="next">►</a>
+{% endif %}
+			</div>
+		</div>
+	</body>
+</html>

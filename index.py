@@ -3,9 +3,14 @@
 from flask import Flask, render_template
 from data import *
 import os.path
+import sys
 
 theApp = Flask(__name__)
 theApp.debug = True
+
+if (not os.path.exists("templates")):
+	print("Should run from root folder")
+	sys.exit()
 
 @theApp.route("/")
 def root():
@@ -43,8 +48,8 @@ def celtic_rss():
 #numbered content
 @theApp.route("/paragraphs/<string:index>.html")
 def paragraph_text(index):
-	if (os.path.isfile("templates/paragraphs/" + number)):
-		return render_template("404.html"), 200
+	if (os.path.isfile("templates/paragraphs/" + index + ".html")):
+		return render_template("paragraph_text.html", intIndex=int(index), paragraphs=paragraphs)
 	else:
 		return render_template("404.html"), 404
 
