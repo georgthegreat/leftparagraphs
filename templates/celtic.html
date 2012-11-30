@@ -9,28 +9,28 @@
 {% set menuItem = "celtic" %}
 {% include "components/menu.html" %}
 		<div class="center">
-			<img src="/images/celtic.png" width="800px" height="268px" alt=""/>			
-			<h2>Передачи выходят в эфир на <a href="http://folkradio.ru">ФолкРадио</a> по субботам, в 20:00 по московскому времени.</h2>
-			<h2>Ниже представлены тексты передач и записи эфиров, a вот здесь – <a href="/other/celtic_tracklist.html">список прозвучавших мелодий и песен</a>.</h2>
-			<ul class="content">
+			<img src="/images/celtic.png" width="800px" height="268px" alt=""/>
+		</div>
+		<h2>Передачи выходят в эфир на <a href="http://folkradio.ru">ФолкРадио</a> по субботам, в 20:00 по московскому времени.</h2>
+		<h2>Ниже представлены тексты передач и записи эфиров, a вот здесь – <a href="/other/celtic_tracklist.html">список прозвучавших мелодий и песен</a>.</h2>	
+		<ul class="content">
 {% for index, title, description, pubdate, filesize, folkradio_filename in programs %}
-				<li>
-					<a href="http://79.142.89.165/keltskayanov/{{folkradio_filename}}.mp3" class="image_link">
-						<img src="/images/icons/download_music.svg" width="24px" height="24px" alt="[download]"/>
-					</a>
-					<a href="/celtic/{{index}}.html">{{index|int}}. {{title}}</a>
-				</li>																																													</li>
-{% endfor %}
-			</ul>
-			<hr/>
-			<div class="navigate">
-				<a href="http://folkradio.ru" class="navigate" title="ФолкРадио" type="application/rss+xml">
-					<img src="/images/icons/radio.svg" width="24px" height="24px" alt="folkradio.ru"/>
+			<li>
+				<a href="http://79.142.89.165/keltskayanov/{{folkradio_filename}}.mp3" class="image_link">
+					<img src="/images/icons/download_music.svg" width="24px" height="24px" alt="[download]"/>
 				</a>
-				<a href="rss/celtic.xml" class="navigate" title="rss" type="application/rss+xml">
-					<img src="/images/icons/rss.svg" width="24px" height="24px" alt="[rss]"/>
-				</a>					
-			</div>
+				<a href="/celtic/{{index}}.html">{{index|int}}. {{title}}</a>
+			</li>
+{% endfor %}
+		</ul>
+		<hr/>
+		<div class="navigate">
+			<a href="http://folkradio.ru" class="navigate" title="ФолкРадио" type="application/rss+xml">
+				<img src="/images/icons/radio.svg" width="24px" height="24px" alt="folkradio.ru"/>
+			</a>
+			<a href="rss/celtic.xml" class="navigate" title="rss" type="application/rss+xml">
+				<img src="/images/icons/rss.svg" width="24px" height="24px" alt="[rss]"/>
+			</a>					
 		</div>
 	</body>
 </html>

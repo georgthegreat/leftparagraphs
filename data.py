@@ -176,11 +176,11 @@ impressionImages = [
 ]
 
 marchImages = [
-	(u"Easter_Islang.jpg", u"Easter_Island.jpg", u"Остров Пасхи"),
+	(u"Easter_Island.jpg", u"Easter_Island.jpg", u"Остров Пасхи"),
 	(u"Copernicus.jpg", u"Copernicus.png", u"Коперник"),
 	(u"No_chicken.png", u"No_chicken.png", u"Не курица"),
 	(u"Business_card.png", u"Business_card.png", u"Визитка"),
-	(u"Copyrigth.svg", u"Copyright.png", u"Копирайт"),
+	(u"Copyright.svg", u"Copyright.png", u"Копирайт"),
 	(u"MDM.png", u"MDM.png", u"Малому бизнесу Москвы"),
 	(u"Alfabank.png", u"Alfabank.png", u"Реклама Альфа-Банка"),
 	(u"Exit.png", u"Exit.png", u"Выход – там"),
