@@ -13,7 +13,7 @@
 			<description>{{description}}</description>
 			<link>http://leftparagraphs.com/celtic/{{index}}.html</link>
 			<guid>http://leftparagraphs.com/celtic/{{index}}.html</guid>
-			<enclosure length="{{filesize}}" url="http://folkradio.ru/keltskayanov/{{folkradio_filename}}.mp3" type="audio/mpeg"/>
+			<enclosure length="{{filesize}}" url="http://79.142.89.165/keltskayanov/{{folkradio_filename}}.mp3" type="audio/mpeg"/>
 			<pubDate>{{pubdate}}</pubDate>
 		</item>
 {% endfor %}
