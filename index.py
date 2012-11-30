@@ -7,6 +7,7 @@ import sys
 
 theApp = Flask(__name__)
 theApp.debug = True
+theApp.jinja_env.trim_blocks = True
 
 if (not os.path.exists("templates")):
 	print("Should run from root folder")
