@@ -52,24 +52,24 @@ def paragraph_text(index):
 	try:
 		intIndex=int(index)
 	except ValueError:
-		return render_template("404.html"), 404
+		raise NotFound()
 
 	if (os.path.isfile("templates/paragraphs/" + index + ".html") and intIndex < len(paragraphs)):
 		return render_template("paragraph_text.html", intIndex=intIndex, paragraphs=paragraphs)
 	else:
-		return render_template("404.html"), 404
+		raise NotFound()
 
 @theApp.route("/celtic/<string:index>.html")
 def celtic_text(index):
 	try:
 		intIndex=int(index)
 	except ValueError:
-		return render_template("404.html"), 404
+		raise NotFound()
 
 	if (os.path.isfile("templates/celtic/" + index + ".html") and intIndex <= len(programs)):
 		return render_template("celtic_text.html", intIndex=int(index), programs=programs)
 	else:
-		return render_template("404.html"), 404
+		raise NotFound()
 
 #static content
 @theApp.route("/other/<path:filename>")
