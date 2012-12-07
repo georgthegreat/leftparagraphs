@@ -9,7 +9,7 @@
 		<atom:link href="http://leftparagraphs.com/rss/celtic.xml" rel="self" type="application/rss+xml"/>
 {% for index, title, description, pubdate, filesize, folkradio_filename in programs %}
 		<item>
-			<title>§{{index|int}}. {{title}}</title>
+			<title>{{index|int}}. {{title}}</title>
 			<description>{{description}}</description>
 			<link>http://leftparagraphs.com/celtic/{{index}}.html</link>
 			<guid>http://leftparagraphs.com/celtic/{{index}}.html</guid>
