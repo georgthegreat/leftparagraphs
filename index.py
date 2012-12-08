@@ -76,14 +76,15 @@ def celtic_text(index):
 def other(filename):
 	return render_template("other/" + filename)
 
-@theApp.route("/<string:subfolder>/<path:filename>")
-def static(subfolder, filename):
-	return theApp.send_static_file(subfolder + "/" + filename)
+@theApp.route("/<path:filename>")
+def static(filename):
+	if (os.path.isfile("static/" + filename
+	return theApp.send_static_file(filename)
 
 @theApp.route("/robots.txt")
 def robots():
 	return theApp.send_static_file("robots.txt")
-
+	
 #setting error handlers
 @theApp.errorhandler(404)
 def http_not_found(error):
