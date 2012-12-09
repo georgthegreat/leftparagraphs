@@ -78,12 +78,8 @@ def other(filename):
 
 @theApp.route("/<path:filename>")
 def static(filename):
-	if (os.path.isfile("static/" + filename
-	return theApp.send_static_file(filename)
-
-@theApp.route("/robots.txt")
-def robots():
-	return theApp.send_static_file("robots.txt")
+	if (os.path.isfile("static/" + filename)):
+		return theApp.send_static_file(filename)
 	
 #setting error handlers
 @theApp.errorhandler(404)

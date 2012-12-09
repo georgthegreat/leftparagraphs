@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 	<head>
 {% include "components/head.html" %}
@@ -8,10 +8,10 @@
 {% set index, title, description, pubdate, filesize, folkradio_filename = programs[intIndex - 1] %}
 		<title>Кельтская новь – {{intIndex}}. {{title}}</title>
 {% if intIndex > minProgram %}
-		<link rel="prefetch" href="{{'%03d%'%(intIndex - 1)}}.html"/>
+		<link rel="prefetch" href="{{'%03d'%(intIndex - 1)}}.html"/>
 {% endif %}
 {% if intIndex < maxProgram %}
-		<link rel="prefetch" href="{{'%03d%'%(intIndex + 1)}}.html"/>
+		<link rel="prefetch" href="{{'%03d'%(intIndex + 1)}}.html"/>
 {% endif %}
 	</head>
 	<body>
