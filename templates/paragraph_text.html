@@ -8,10 +8,10 @@
 {% set index, title, description, pubdate = paragraphs[intIndex] %}
 		<title>.руЛевые – {{intIndex}}. {{title}}</title>
 {% if intIndex > minParagraph %}
-		<link rel="prefetch" href="{{'%03d%'%(intIndex - 1)}}.html"/>
+		<link rel="prefetch" href="{{'%03d'%(intIndex - 1)}}.html"/>
 {% endif %}
 {% if intIndex < maxParagraph %}
-		<link rel="prefetch" href="{{'%03d%'%(intIndex + 1)}}.html"/>
+		<link rel="prefetch" href="{{'%03d'%(intIndex + 1)}}.html"/>
 {% endif %}
 	</head>
 	<body>
