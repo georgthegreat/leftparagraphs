@@ -9,11 +9,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	display: block;
 }
 
-ol {
-	list-style-type: none;
-}
-
-ul {
+ol, ul {
 	list-style-type: none;
 }
 
