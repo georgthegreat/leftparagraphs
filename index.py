@@ -36,10 +36,6 @@ def my():
 def celtic():
 	return render_template(u"celtic.html", programs=programs)
 
-@theApp.route(u"/about.html")
-def about():
-	return render_template(u"about.html")
-
 #rss feeds
 @theApp.route(u"/rss/paragraphs.xml")
 def paragraphs_rss():
@@ -74,14 +70,11 @@ def celtic_text(index):
 	else:
 		return http_not_found(404)
 
-#static content
-@theApp.route(u"/other/<path:filename>")
-def other(filename):
-	return render_template(u"other/" + filename)
-
 @theApp.route(u"/<path:filename>")
 def static(filename):
-	if (os.path.isfile(u"static/" + filename)):
+	if (os.path.isfile(u"templates/" + filename)):
+		return render_template(filename)
+	elif (os.path.isfile(u"static/" + filename)):
 		return theApp.send_static_file(filename)
 	else:
 		return render_template(u"404.html"), 404
