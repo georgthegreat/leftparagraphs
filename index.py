@@ -83,6 +83,8 @@ def other(filename):
 def static(filename):
 	if (os.path.isfile(u"static/" + filename)):
 		return theApp.send_static_file(filename)
+	else:
+		return render_template(u"404.html"), 404
 	
 #setting error handlers
 @theApp.errorhandler(404)
