@@ -51,8 +51,6 @@ _UpgradeReport_Files
 *.snm
 *.toc
 *.run.xml
-# latex output files - this is quite ambiguous line
-*.pdf
 
 # OS generated files
 .DS_Store
