@@ -1,4 +1,4 @@
-﻿* Приделать базу данных вместо дурацкой data.py
+﻿* Приделать базу данных (SQLAlchemy / MongoDB) вместо дурацкой data.py
 
 * http://habrahabr.ru/post/160997/#habracut (стили для печати страницы)
 
