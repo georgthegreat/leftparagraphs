@@ -72,6 +72,5 @@ desktop.ini
 *.dependency
 
 # put your own ignores below this line (don't forget about the newline in the end of file)
-test-bibtex.pdf
 test-biblatex.pdf
 test-biblatex-detailed.pdf
