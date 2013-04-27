@@ -235,7 +235,8 @@ photopImages = [
 
 drugoeImages = [
 	(u"/other/testing.html", u"TestSystem.jpg", u"Интерфейс для тестирующей системы МФЮА"),
-	(u"/files/cotillon.pdf", u"Cotillon.png", u"Статья про историю происхождения и развития котильонов XIX века (в формате pdf)")
+	(u"/files/cotillon.pdf", u"Cotillon.png", u"Статья про историю происхождения и развития котильонов XIX века (в формате pdf)"),
+	(u"/files/paracelsus.pdf", u"Paracelsus.jpg", u"Статья про жизнь и научные достижения Парацельса (в формате pdf)")
 ]
 
 programs = [
