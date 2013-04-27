@@ -6,7 +6,7 @@
 {% set maxParagraph = paragraphs|length - 1 %}
 {% set textIndex = "%03d"%intIndex %}
 {% set index, title, description, pubdate = paragraphs[intIndex] %}
-		<title>.руЛевые – {{intIndex}}. {{title}}</title>
+		<title>.руЛевые — {{intIndex}}. {{title}}</title>
 {% if intIndex > minParagraph %}
 		<link rel="prefetch" href="{{'%03d'%(intIndex - 1)}}.html"/>
 {% endif %}

@@ -6,7 +6,7 @@
 {% set maxProgram = programs|length %}
 {% set textIndex = "%03d"%intIndex %}
 {% set index, title, description, pubdate, filesize, folkradio_filename = programs[intIndex - 1] %}
-		<title>Кельтская новь – {{intIndex}}. {{title}}</title>
+		<title>Кельтская новь — {{intIndex}}. {{title}}</title>
 {% if intIndex > minProgram %}
 		<link rel="prefetch" href="{{'%03d'%(intIndex - 1)}}.html"/>
 {% endif %}
