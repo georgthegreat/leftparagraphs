@@ -37,7 +37,7 @@ def blog():
 
 @theApp.route("/my.html")
 def my():
-	return render_template("my.html", images_improssion=data.images_improssion, images_march=data.images_march, images_photop=data.images_photop, images_other=images_other)
+	return render_template("my.html", images_impression=data.images_impression, images_march=data.images_march, images_photop=data.images_photop, images_other=images_other)
 
 
 @theApp.route("/celtic.html")
