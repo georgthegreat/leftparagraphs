@@ -88,7 +88,7 @@ def celtic_text(index):
 	if (os.path.isfile("templates/celtic/" + index + ".html") and index_int <= len(data.programs)):
 		return render_template(
 			"celtic_text.html", 
-			index_int=index_int), 
+			index_int=index_int, 
 			programs=data.programs
 		)
 	else:
