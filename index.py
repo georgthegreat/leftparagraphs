@@ -37,7 +37,12 @@ def blog():
 
 @theApp.route("/my.html")
 def my():
-	return render_template("my.html", images_impression=data.images_impression, images_march=data.images_march, images_photop=data.images_photop, images_other=images_other)
+	return render_template("my.html", 
+		images_impression=data.images_impression, 
+		images_march=data.images_march, 
+		images_photop=data.images_photop, 
+		images_other=data.images_other
+	)
 
 
 @theApp.route("/celtic.html")
@@ -114,8 +119,8 @@ def http_forbidden(error):
 file_handler = logging.FileHandler("leftparagraphs.log", mode="a", encoding=None, delay=False)
 file_handler.setFormatter(Formatter(
 '''
-Message type:       %(levelname)s
-Location:           %(pathname)s:%(lineno)d
+Message type:	   %(levelname)s
+Location:		   %(pathname)s:%(lineno)d
 Message: %(message)s
 
 '''))
