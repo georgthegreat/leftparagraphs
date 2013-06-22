@@ -64,12 +64,16 @@ def celtic_rss():
 @theApp.route("/paragraphs/<string:index>.html")
 def paragraph_text(index):
 	try:
-		int_index=int(index)
+		index_int=int(index)
 	except ValueError:
 		abort(400)
 
-	if (os.path.isfile("templates/paragraphs/" + index + ".html") and int_index < len(data.paragraphs)):
-		return render_template("paragraph_text.html", int_index=int_index, paragraphs=data.paragraphs)
+	if (os.path.isfile("templates/paragraphs/" + index + ".html") and index_int < len(data.paragraphs)):
+		return render_template(
+			"paragraph_text.html", 
+			index_int=index_int, 
+			paragraphs=data.paragraphs
+		)
 	else:
 		abort(404)
 
@@ -77,12 +81,16 @@ def paragraph_text(index):
 @theApp.route("/celtic/<string:index>.html")
 def celtic_text(index):
 	try:
-		int_index=int(index)
+		index_int=int(index)
 	except ValueError:
 		abort(400)
 
-	if (os.path.isfile("templates/celtic/" + index + ".html") and int_index <= len(data.programs)):
-		return render_template("celtic_text.html", int_index=int(index), programs=data.programs)
+	if (os.path.isfile("templates/celtic/" + index + ".html") and index_int <= len(data.programs)):
+		return render_template(
+			"celtic_text.html", 
+			index_int=index_int), 
+			programs=data.programs
+		)
 	else:
 		abort(404)
 
