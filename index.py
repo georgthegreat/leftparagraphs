@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template
+from flask import Flask
+from flask import render_template
+from flask import abort
+
 import data
+
 import os.path
 import sys
 
@@ -20,26 +24,32 @@ if (not os.path.exists("templates")):
 def root():
 	return render_template("index.html", paragraphs=data.paragraphs)
 
+
 @theApp.route("/index.html")
 def anotherRoot():
 	return render_template("index.html", paragraphs=data.paragraphs)
+
 
 @theApp.route("/blog.html")
 def blog():
 	return render_template("blog.html", images_blog=data.images_blog)
 
+
 @theApp.route("/my.html")
 def my():
 	return render_template("my.html", images_improssion=data.images_improssion, images_march=data.images_march, images_photop=data.images_photop, images_other=images_other)
+
 
 @theApp.route("/celtic.html")
 def celtic():
 	return render_template("celtic.html", programs=data.programs)
 
+
 #rss feeds
 @theApp.route("/rss/paragraphs.xml")
 def paragraphs_rss():
 	return render_template("rss/paragraphs.xml", paragraphs=reversed(data.paragraphs))
+
 
 @theApp.route("/rss/celtic.xml")
 def celtic_rss():
@@ -51,44 +61,55 @@ def paragraph_text(index):
 	try:
 		int_index=int(index)
 	except ValueError:
-		return http_not_found(404)
+		abort(400)
 
 	if (os.path.isfile("templates/paragraphs/" + index + ".html") and int_index < len(data.paragraphs)):
 		return render_template("paragraph_text.html", int_index=int_index, paragraphs=data.paragraphs)
 	else:
-		return http_not_found(404)
+		abort(404)
+
 
 @theApp.route("/celtic/<string:index>.html")
 def celtic_text(index):
 	try:
 		int_index=int(index)
 	except ValueError:
-		return http_not_found(404)
+		abort(400)
 
 	if (os.path.isfile("templates/celtic/" + index + ".html") and int_index <= len(data.programs)):
 		return render_template("celtic_text.html", int_index=int(index), programs=data.programs)
 	else:
-		return http_not_found(404)
+		abort(404)
+
 
 @theApp.route("/<path:filename>")
-def static(filename):
+def everything_else(filename):
 	if (os.path.isfile("templates/" + filename)):
 		return render_template(filename)
 	elif (os.path.isfile("static/" + filename)):
 		return theApp.send_static_file(filename)
 	else:
-		return render_template("404.html"), 404
-	
+		abort(404)
+
+
 #setting error handlers
 @theApp.errorhandler(404)
 def http_not_found(error):
 	theApp.logger.error("Error #404 occured")
-	return render_template("404.html"), 404
+	return (render_template("404.html"), 404)
+
 
 @theApp.errorhandler(403)
 def http_forbidden(error):
 	theApp.logger.error("Error #403 occured")
-	return render_template("403.html"), 403
+	return (render_template("403.html"), 403)
+
+
+@theApp.errorhandler(400)
+def http_forbidden(error):
+	theApp.logger.error("Error #400 occured")
+	return (render_template("400.html"), 400)
+
 
 file_handler = logging.FileHandler("leftparagraphs.log", mode="a", encoding=None, delay=False)
 file_handler.setFormatter(Formatter(
