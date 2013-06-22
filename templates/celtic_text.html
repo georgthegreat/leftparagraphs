@@ -2,16 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 	<head>
 {% include "components/head.html" %}
-{% set minProgram = 1 %}
-{% set maxProgram = programs|length %}
-{% set textIndex = "%03d"%intIndex %}
-{% set index, title, description, pubdate, filesize, folkradio_filename = programs[intIndex - 1] %}
-		<title>Кельтская новь — {{intIndex}}. {{title}}</title>
-{% if intIndex > minProgram %}
-		<link rel="prefetch" href="{{'%03d'%(intIndex - 1)}}.html"/>
+{% set program_min = 1 %}
+{% set program_max = programs|length %}
+{% set index, title, description, pubdate, filesize, folkradio_filename = programs[index_int - 1] %}
+		<title>Кельтская новь — {{index_int}}. {{title}}</title>
+{% if index_int > program_min %}
+		<link rel="prefetch" href="{{'%03d'%(index_int - 1)}}.html"/>
 {% endif %}
-{% if intIndex < maxProgram %}
-		<link rel="prefetch" href="{{'%03d'%(intIndex + 1)}}.html"/>
+{% if index_int < program_max %}
+		<link rel="prefetch" href="{{'%03d'%(index_int + 1)}}.html"/>
 {% endif %}
 	</head>
 	<body>
@@ -19,7 +18,7 @@
 {% include "components/menu.html" %}
 		<div class="center">
 			<img src="/images/celtic.png" width="800px" height="268px" alt=""/>		
-			<h1>{{intIndex}}. {{title}}</h1>
+			<h1>{{index_int}}. {{title}}</h1>
 		</div>	
 		<div class="content">
 			<div class="center">
@@ -32,10 +31,10 @@
 			</div>	
 			<hr/>
 			<div class="center" id="navigation">
-{% for navIndex in range(intIndex - 4, intIndex + 4 + 1) %}
-{% if navIndex == intIndex %}
+{% for navIndex in range(index_int - 4, index_int + 4 + 1) %}
+{% if navIndex == index_int %}
 				<span class="navigate2" style="background-color: #cc9900;">{{navIndex}}</span>
-{% elif (navIndex >= minProgram) and (navIndex <= maxProgram)  %}
+{% elif (navIndex >= program_min) and (navIndex <= program_max)  %}
 {% set index, title, description, pubdate, filesize, folkradio_filename = programs[navIndex - 1] %}
 				<a href="{{index}}.html" class="navigate2" title="{{title}}">{{navIndex}}</a>
 {% endif %}
@@ -43,12 +42,12 @@
 				<a href="../celtic.html">Список передач</a>
 			</div>
 			<div class="navigate">
-{% if intIndex > minProgram %}
-				<a href="{{"%03d"%(intIndex - 1)}}.html" class="navigate" id="PrevLink" title="Туда" rel="prev">◄</a>
+{% if index_int > program_min %}
+				<a href="{{"%03d"%(index_int - 1)}}.html" class="navigate" id="PrevLink" title="Туда" rel="prev">◄</a>
 {% endif %}
 				Ctrl
-{% if intIndex < maxProgram %}
-				<a href="{{"%03d"%(intIndex + 1)}}.html" class="navigate" id="NextLink" title="Туда" rel="next">►</a>
+{% if index_int < program_max %}
+				<a href="{{"%03d"%(index_int + 1)}}.html" class="navigate" id="NextLink" title="Туда" rel="next">►</a>
 {% endif %}
 			</div>
 		</div>

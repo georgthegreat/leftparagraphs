@@ -10,7 +10,7 @@
 {% include "components/menu.html" %}
 		<div class="center content">
 			<h1 style="padding-bottom: 20px;">We Blog</h1>
-{% for height, width, data in blogImages %}
+{% for height, width, data in images_blog %}
 			<img class="blog_img" width="{{width}}px" height="{{height}}px" alt="" src="data:image/png;base64,{{data}}"/><hr/>
 {% endfor %}
 		</div>

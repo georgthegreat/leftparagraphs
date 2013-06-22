@@ -2,31 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 	<head>
 {% include "components/head.html" %}
-{% set minParagraph = 0 %}
-{% set maxParagraph = paragraphs|length - 1 %}
-{% set textIndex = "%03d"%intIndex %}
-{% set index, title, description, pubdate = paragraphs[intIndex] %}
-		<title>.руЛевые — {{intIndex}}. {{title}}</title>
-{% if intIndex > minParagraph %}
-		<link rel="prefetch" href="{{'%03d'%(intIndex - 1)}}.html"/>
+{% set paragraph_min = 0 %}
+{% set paragraph_max = paragraphs|length - 1 %}
+{% set index, title, description, pubdate = paragraphs[index_int] %}
+		<title>.руЛевые — {{index_int}}. {{title}}</title>
+{% if index_int > paragraph_min %}
+		<link rel="prefetch" href="{{'%03d'%(index_int - 1)}}.html"/>
 {% endif %}
-{% if intIndex < maxParagraph %}
-		<link rel="prefetch" href="{{'%03d'%(intIndex + 1)}}.html"/>
+{% if index_int < paragraph_max %}
+		<link rel="prefetch" href="{{'%03d'%(index_int + 1)}}.html"/>
 {% endif %}
 	</head>
 	<body>
 {% include "components/header.html" %}
 {% include "components/menu.html" %}
 		<div class="content">
-			<h1>{{intIndex}}. {{title}}</h1>
+			<h1>{{index_int}}. {{title}}</h1>
 {% set address = "paragraphs/" + index + ".html" %}
 {% include address %}
 			<hr/>
 			<div class="center" id="navigation">
-{% for navIndex in range(intIndex - 4, intIndex + 4 + 1) %}
-{% if navIndex == intIndex %}
+{% for navIndex in range(index_int - 4, index_int + 4 + 1) %}
+{% if navIndex == index_int %}
 				<span class="navigate2" style="background-color: #cc9900;">{{navIndex}}</span>
-{% elif (navIndex >= minParagraph) and (navIndex <= maxParagraph)  %}
+{% elif (navIndex >= paragraph_min) and (navIndex <= paragraph_max)  %}
 {% set index, title, description, pubdate = paragraphs[navIndex] %}
 				<a href="{{index}}.html" class="navigate2" title="{{title}}">{{navIndex}}</a>
 {% endif %}
@@ -34,12 +33,12 @@
 				<a href="../index.html">Список передач</a>
 			</div>
 			<div class="navigate">
-{% if intIndex > minParagraph %}
-				<a href="{{"%03d"%(intIndex - 1)}}.html" class="navigate" id="PrevLink" title="Туда" rel="prev">◄</a>
+{% if index_int > paragraph_min %}
+				<a href="{{"%03d"%(index_int - 1)}}.html" class="navigate" id="PrevLink" title="Туда" rel="prev">◄</a>
 {% endif %}
 				Ctrl
-{% if intIndex < maxParagraph %}
-				<a href="{{"%03d"%(intIndex + 1)}}.html" class="navigate" id="NextLink" title="Туда" rel="next">►</a>
+{% if index_int < paragraph_max %}
+				<a href="{{"%03d"%(index_int + 1)}}.html" class="navigate" id="NextLink" title="Туда" rel="next">►</a>
 {% endif %}
 			</div>
 		</div>

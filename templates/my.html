@@ -14,11 +14,11 @@
 			<h3>Impression</h3>
 			<p>Слово ‹impression› в переводе с французского означает «впечатление». Цель — сделать одну работу, которая отражала бы мое впечатление на творчество того или иного художника. Встречаем.</p>
 			<div class="center">
-{% for fullFilename, previewFilename, description in impressionImages %}
+{% for full_filename, preview_filename, description in images_improssion %}
 				<div class="gallery">
 					<div style="width: 200px">
-						<a class="image_link" href="/images/my/{{fullFilename}}">
-							<img width="200px" height="200px" alt="" src="/images/preview/{{previewFilename}}"/><br/>
+						<a class="image_link" href="/images/my/{{full_filename}}">
+							<img width="200px" height="200px" alt="" src="/images/preview/{{preview_filename}}"/><br/>
 							<span>{{description}}</span>
 						</a>
 					</div>
@@ -30,11 +30,11 @@
 			<h3>Март</h3>
 			<p>Март, весна, любовь, искусство, мажор, радость, игра, свет, дизайн, штуки, смысл, правда, цвет, чувство, улыбка, вещь, вечность, нежность, дружба, слово, обещание, встреча, мысль, точность, индивидуальность, солнце, смех. Уже здесь.</p>
 			<div class="center">
-{% for fullFilename, previewFilename, description in marchImages %}
+{% for full_filename, preview_filename, description in images_march %}
 				<div class="gallery">
 					<div style="width: 200px">
-						<a class="image_link" href="/images/my/{{fullFilename}}">
-							<img width="200px" height="200px" alt="" src="/images/preview/{{previewFilename}}"/><br/>
+						<a class="image_link" href="/images/my/{{full_filename}}">
+							<img width="200px" height="200px" alt="" src="/images/preview/{{preview_filename}}"/><br/>
 							<span>{{description}}</span>
 						</a>
 					</div>
@@ -46,11 +46,11 @@
 			<h3>Великий photop</h3>
 			<p>Судью — на мыло.</p>
 			<div class="center">
-{% for fullFilename, previewFilename, description in photopImages %}
+{% for full_filename, preview_filename, description in images_photop %}
 				<div class="gallery">
 					<div style="width: 200px">
-						<a class="image_link" href="/images/my/{{fullFilename}}">
-							<img width="200px" height="200px" alt="" src="/images/preview/{{previewFilename}}"/><br/>
+						<a class="image_link" href="/images/my/{{full_filename}}">
+							<img width="200px" height="200px" alt="" src="/images/preview/{{preview_filename}}"/><br/>
 							<span>{{description}}</span>
 						</a>
 					</div>
@@ -62,11 +62,11 @@
 			<h3>Drugое</h3>
 			<p>Дальше — больше. Абсолютное противоречие со всеми мыслимыми законами перспективы.</p>
 			<div class="center">
-{% for fullFilename, previewFilename, description in drugoeImages %}
+{% for full_filename, preview_filename, description in images_other %}
 				<div class="gallery">
 					<div style="width: 200px">
-						<a class="image_link" href="{{fullFilename}}">
-							<img width="200px" height="200px" alt="" src="/images/preview/{{previewFilename}}"/><br/>
+						<a class="image_link" href="{{full_filename}}">
+							<img width="200px" height="200px" alt="" src="/images/preview/{{preview_filename}}"/><br/>
 							<span>{{description}}</span>
 						</a>
 					</div>
