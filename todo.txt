@@ -6,8 +6,4 @@
 http://flask.pocoo.org/mailinglist/archive/2010/5/17/overriding-default-mime-type/#79852bd9339fb156435866a8613a35ba
 http://stackoverflow.com/questions/11945523/forcing-application-json-mime-type-in-a-view-flask
 
-* поставить orphus на сайт (Орфографический Улучшатель Сайтов)
-
 * изменить цвет посещённых ссылок
-
-* на логотипе «Кельтской нови» написать «Западной Европы» вместо «западной Европы»
