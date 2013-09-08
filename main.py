@@ -1,41 +1,39 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from flask import Flask
-from flask import render_template
-from flask import abort
-
-import data
-
-import os.path
-import sys
 
 import logging
 from logging import Formatter
+import os.path
+import sys
 
-theApp = Flask(__name__)
-theApp.debug = True
-theApp.jinja_env.trim_blocks = True
+from flask import Flask, render_template, abort
+
+import data
+
+app = Flask(__name__)
+app.debug = True
+app.jinja_env.trim_blocks = True
 
 if (not os.path.exists("templates")):
 	print("Should run from root folder")
 	sys.exit()
 
-@theApp.route("/")
+@app.route("/")
 def root():
 	return render_template("index.html", paragraphs=data.paragraphs)
 
 
-@theApp.route("/index.html")
+@app.route("/index.html")
 def anotherRoot():
 	return render_template("index.html", paragraphs=data.paragraphs)
 
 
-@theApp.route("/blog.html")
+@app.route("/blog.html")
 def blog():
 	return render_template("blog.html", images_blog=data.images_blog)
 
 
-@theApp.route("/my.html")
+@app.route("/my.html")
 def my():
 	return render_template("my.html", 
 		images_impression=data.images_impression, 
@@ -45,23 +43,23 @@ def my():
 	)
 
 
-@theApp.route("/celtic.html")
+@app.route("/celtic.html")
 def celtic():
 	return render_template("celtic.html", programs=data.programs)
 
 
 #rss feeds
-@theApp.route("/rss/paragraphs.xml")
+@app.route("/rss/paragraphs.xml")
 def paragraphs_rss():
 	return render_template("rss/paragraphs.xml", paragraphs=reversed(data.paragraphs))
 
 
-@theApp.route("/rss/celtic.xml")
+@app.route("/rss/celtic.xml")
 def celtic_rss():
 	return render_template("rss/celtic.xml", programs=reversed(data.programs))
 
 #numbered content
-@theApp.route("/paragraphs/<string:index>.html")
+@app.route("/paragraphs/<string:index>.html")
 def paragraph_text(index):
 	try:
 		index_int=int(index)
@@ -78,7 +76,7 @@ def paragraph_text(index):
 		abort(404)
 
 
-@theApp.route("/celtic/<string:index>.html")
+@app.route("/celtic/<string:index>.html")
 def celtic_text(index):
 	try:
 		index_int=int(index)
@@ -95,32 +93,32 @@ def celtic_text(index):
 		abort(404)
 
 
-@theApp.route("/<path:filename>")
+@app.route("/<path:filename>")
 def everything_else(filename):
 	if (os.path.isfile("templates/" + filename)):
 		return render_template(filename)
 	elif (os.path.isfile("static/" + filename)):
-		return theApp.send_static_file(filename)
+		return app.send_static_file(filename)
 	else:
 		abort(404)
 
 
 #setting error handlers
-@theApp.errorhandler(404)
+@app.errorhandler(404)
 def http_not_found(error):
-	theApp.logger.error("Error #404 occured")
+	app.logger.error("Error #404 occured")
 	return (render_template("404.html"), 404)
 
 
-@theApp.errorhandler(403)
+@app.errorhandler(403)
 def http_forbidden(error):
-	theApp.logger.error("Error #403 occured")
+	app.logger.error("Error #403 occured")
 	return (render_template("403.html"), 403)
 
 
-@theApp.errorhandler(400)
+@app.errorhandler(400)
 def http_forbidden(error):
-	theApp.logger.error("Error #400 occured")
+	app.logger.error("Error #400 occured")
 	return (render_template("400.html"), 400)
 
 
@@ -133,8 +131,8 @@ Message: %(message)s
 
 '''))
 file_handler.setLevel(logging.WARNING)
-theApp.logger.addHandler(file_handler)
+app.logger.addHandler(file_handler)
 	
 if __name__ == "__main__":
-	theApp.run(host="0.0.0.0")
+	app.run(host="0.0.0.0")
 
