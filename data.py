@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
 # (index, title, description, pubdate)
 paragraphs = [
 	("000", "Введение", "Нечто вроде «Здравствуйте!»", "Sun, 21 Aug 2011 00:00:00 +0300"),

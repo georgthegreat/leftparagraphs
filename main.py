@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# coding: utf-8
 
-import logging
-from logging import Formatter
 import os.path
 import sys
 
@@ -24,8 +22,8 @@ def root():
 
 
 @app.route("/index.html")
-def anotherRoot():
-	return render_template("index.html", paragraphs=data.paragraphs)
+def another_root():
+	return root()
 
 
 @app.route("/blog.html")
@@ -35,10 +33,10 @@ def blog():
 
 @app.route("/my.html")
 def my():
-	return render_template("my.html", 
-		images_impression=data.images_impression, 
-		images_march=data.images_march, 
-		images_photop=data.images_photop, 
+	return render_template("my.html",
+		images_impression=data.images_impression,
+		images_march=data.images_march,
+		images_photop=data.images_photop,
 		images_other=data.images_other
 	)
 
@@ -68,8 +66,8 @@ def paragraph_text(index):
 
 	if (os.path.isfile("templates/paragraphs/" + index + ".html") and index_int < len(data.paragraphs)):
 		return render_template(
-			"paragraph_text.html", 
-			index_int=index_int, 
+			"paragraph_text.html",
+			index_int=index_int,
 			paragraphs=data.paragraphs
 		)
 	else:
@@ -85,8 +83,8 @@ def celtic_text(index):
 
 	if (os.path.isfile("templates/celtic/" + index + ".html") and index_int <= len(data.programs)):
 		return render_template(
-			"celtic_text.html", 
-			index_int=index_int, 
+			"celtic_text.html",
+			index_int=index_int,
 			programs=data.programs
 		)
 	else:
@@ -106,33 +104,18 @@ def everything_else(filename):
 #setting error handlers
 @app.errorhandler(404)
 def http_not_found(error):
-	app.logger.error("Error #404 occured")
 	return (render_template("404.html"), 404)
 
 
 @app.errorhandler(403)
 def http_forbidden(error):
-	app.logger.error("Error #403 occured")
 	return (render_template("403.html"), 403)
 
 
 @app.errorhandler(400)
 def http_forbidden(error):
-	app.logger.error("Error #400 occured")
 	return (render_template("400.html"), 400)
 
-
-file_handler = logging.FileHandler("leftparagraphs.log", mode="a", encoding=None, delay=False)
-file_handler.setFormatter(Formatter(
-'''
-Message type:	   %(levelname)s
-Location:		   %(pathname)s:%(lineno)d
-Message: %(message)s
-
-'''))
-file_handler.setLevel(logging.WARNING)
-app.logger.addHandler(file_handler)
-	
 if __name__ == "__main__":
 	app.run(host="0.0.0.0")
 
