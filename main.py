@@ -11,7 +11,7 @@ from flask import Flask, render_template, abort
 import data
 
 app = Flask(__name__)
-app.debug = True
+
 app.jinja_env.trim_blocks = True
 
 if (not os.path.exists("templates")):
