@@ -4,9 +4,11 @@
 import os.path
 import sys
 
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, redirect
 
 import data
+
+APP_PREFIX = ""
 
 app = Flask(__name__)
 
@@ -16,22 +18,22 @@ if (not os.path.exists("templates")):
 	print("Should run from root folder")
 	sys.exit()
 
-@app.route("/")
+@app.route(APP_PREFIX + "/")
+def redirect_root():
+	return redirect("/index.html")
+
+
+@app.route(APP_PREFIX + "/index.html")
 def root():
 	return render_template("index.html", paragraphs=data.paragraphs)
 
 
-@app.route("/index.html")
-def another_root():
-	return root()
-
-
-@app.route("/blog.html")
+@app.route(APP_PREFIX + "/blog.html")
 def blog():
 	return render_template("blog.html", images_blog=data.images_blog)
 
 
-@app.route("/my.html")
+@app.route(APP_PREFIX + "/my.html")
 def my():
 	return render_template("my.html",
 		images_impression=data.images_impression,
@@ -41,23 +43,23 @@ def my():
 	)
 
 
-@app.route("/celtic.html")
+@app.route(APP_PREFIX + "/celtic.html")
 def celtic():
 	return render_template("celtic.html", programs=data.programs)
 
 
 #rss feeds
-@app.route("/rss/paragraphs.xml")
+@app.route(APP_PREFIX + "/rss/paragraphs.xml")
 def paragraphs_rss():
 	return render_template("rss/paragraphs.xml", paragraphs=reversed(data.paragraphs))
 
 
-@app.route("/rss/celtic.xml")
+@app.route(APP_PREFIX + "/rss/celtic.xml")
 def celtic_rss():
 	return render_template("rss/celtic.xml", programs=reversed(data.programs))
 
 #numbered content
-@app.route("/paragraphs/<string:index>.html")
+@app.route(APP_PREFIX + "/paragraphs/<string:index>.html")
 def paragraph_text(index):
 	try:
 		index_int=int(index)
@@ -74,7 +76,7 @@ def paragraph_text(index):
 		abort(404)
 
 
-@app.route("/celtic/<string:index>.html")
+@app.route(APP_PREFIX + "/celtic/<string:index>.html")
 def celtic_text(index):
 	try:
 		index_int=int(index)
@@ -91,7 +93,7 @@ def celtic_text(index):
 		abort(404)
 
 
-@app.route("/<path:filename>")
+@app.route(APP_PREFIX + "/<path:filename>")
 def everything_else(filename):
 	if (os.path.isfile("templates/" + filename)):
 		return render_template(filename)

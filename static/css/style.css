@@ -9,17 +9,17 @@ body {
 	background-color: #ffffff;
 	margin: 0px 0px 100px 0px;
 	font-size: 100%;
-    font-family: "PT Sans", sans-serif;
+	font-family: "PT Sans", sans-serif;
 }
 
 h1, h2, h3 {
-    font-family: "PT Sans Caption", sans-serif;
-    text-align: center;
-    margin: 10px;
+	font-family: "PT Sans Caption", sans-serif;
+	text-align: center;
+	margin: 10px;
 }
 
 h1 {
-    font-size: 200%;
+	font-size: 200%;
 }
 
 h2 {
@@ -27,8 +27,8 @@ h2 {
 }
 
 h3 {
-    font-size: 120%;
-    margin: 30px 10px 0px 10px;
+	font-size: 120%;
+	margin: 30px 10px 0px 10px;
 }
 
 p {
@@ -111,15 +111,15 @@ li img {
 .epigraph  {
 	width: 1%;
 	text-align: left;
-    font-style: italic;
-    white-space: nowrap;
+	font-style: italic;
+	white-space: nowrap;
 }
 
 .navigate {
-    font-weight: 700;
-    color: #0088ff;
-    text-decoration: none;
-    text-align: center;
+	font-weight: 700;
+	color: #0088ff;
+	text-decoration: none;
+	text-align: center;
 	line-height: 20px;
 }
 

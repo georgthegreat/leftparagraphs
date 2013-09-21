@@ -16,7 +16,7 @@ function navArr(event)
 
 	if (event.ctrlKey)
 	{
-		switch (event.keyCode)          
+		switch (event.keyCode)		  
 		{
 			case arrowLeft:
 				if (next)
@@ -28,5 +28,5 @@ function navArr(event)
 				break;
 		}
 	}
-    return;     
+	return;	 
 }
