@@ -225,7 +225,7 @@ images_march = [
 	("Asteroids.jpg", "Asteroids.jpg", "Метеориты падают вверх"),
 	("ChGK_Poster.png", "ChGK_Poster.png", "Еще один плакат для «Что? Где? Когда?»"),
 	("Child_School.jpg", "Child_School.jpg", "Объявление для детской школы"),
-	("Celtic.png", "Celtic.png", "Логотип для «Кельтской нови»")
+	("Celtic.png", "Celtic.png", "Логотип для «Кельтской нови»"),
 	("Yves_Leblanc.png", "Yves_Leblanc.png", "Постер для несостоявшегося эфира с Ивом Лебланом")
 ]
 
