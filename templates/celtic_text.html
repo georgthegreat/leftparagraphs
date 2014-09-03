@@ -1,21 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 	<head>
-{% include "components/head.html" %}
-{% set program_min = 1 %}
-{% set program_max = programs|length %}
-{% set index, title, description, pubdate, filesize, folkradio_filename = programs[index_int - 1] %}
+		{% include "components/head.html" %}
+		{% set program_min = 1 %}
+		{% set program_max = programs|length %}
+		{% set index, title, description, pubdate, filesize, folkradio_filename = programs[index_int - 1] %}
 		<title>Кельтская новь — {{index_int}}. {{title}}</title>
-{% if index_int > program_min %}
+	{% if index_int > program_min %}
 		<link rel="prefetch" href="{{'%03d'%(index_int - 1)}}.html"/>
-{% endif %}
-{% if index_int < program_max %}
+	{% endif %}
+	{% if index_int < program_max %}
 		<link rel="prefetch" href="{{'%03d'%(index_int + 1)}}.html"/>
-{% endif %}
+	{% endif %}
 	</head>
 	<body>
-{% include "components/header.html" %}
-{% include "components/menu.html" %}
+		{% include "components/header.html" %}
+		{% include "components/menu.html" %}
 		<div class="center">
 			<img src="/images/celtic.png" width="800px" height="268px" alt=""/>		
 			<h1>{{index_int}}. {{title}}</h1>
@@ -24,31 +24,31 @@
 			<div class="center">
 				<a href="http://media.folkradio.ru/keltskayanov/{{folkradio_filename}}.mp3">Скачать передачу</a>
 			</div>	
-{% set address = "celtic/" + index + ".html" %}
-{% include address %}
+			{% set address = "celtic/" + index + ".html" %}
+			{% include address %}
 			<div class="center">
 				<a href="http://media.folkradio.ru/keltskayanov/{{folkradio_filename}}.mp3">Скачать передачу</a>
 			</div>	
 			<hr/>
 			<div class="center" id="navigation">
-{% for navIndex in range(index_int - 4, index_int + 4 + 1) %}
-{% if navIndex == index_int %}
+			{% for navIndex in range(index_int - 4, index_int + 4 + 1) %}
+				{% if navIndex == index_int %}
 				<span class="navigate2" style="background-color: #cc9900;">{{navIndex}}</span>
-{% elif (navIndex >= program_min) and (navIndex <= program_max)  %}
-{% set index, title, description, pubdate, filesize, folkradio_filename = programs[navIndex - 1] %}
+				{% elif (navIndex >= program_min) and (navIndex <= program_max)  %}
+					{% set index, title, description, pubdate, filesize, folkradio_filename = programs[navIndex - 1] %}
 				<a href="{{index}}.html" class="navigate2" title="{{title}}">{{navIndex}}</a>
-{% endif %}
-{% endfor %}
+				{% endif %}
+			{% endfor %}
 				<a href="../celtic.html">Список передач</a>
 			</div>
 			<div class="navigate">
-{% if index_int > program_min %}
+			{% if index_int > program_min %}
 				<a href="{{"%03d"%(index_int - 1)}}.html" class="navigate" id="PrevLink" title="Туда" rel="prev">◄</a>
-{% endif %}
+			{% endif %}
 				Ctrl
-{% if index_int < program_max %}
+			{% if index_int < program_max %}
 				<a href="{{"%03d"%(index_int + 1)}}.html" class="navigate" id="NextLink" title="Туда" rel="next">►</a>
-{% endif %}
+			{% endif %}
 			</div>
 		</div>
 	</body>

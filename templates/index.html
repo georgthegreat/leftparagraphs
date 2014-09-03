@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 	<head>
-{% include "components/head.html" %}	
+	{% include "components/head.html" %}	
 		<title>.руЛевые — Список параграфов</title>
 	</head>
 	<body>
-{% include "components/header.html" %}	
-{% set menuItem = "index" %}
-{% include "components/menu.html" %}
+	{% include "components/header.html" %}	
+	{% set menuItem = "index" %}
+	{% include "components/menu.html" %}
 		<div class="content">
 			<h1>Список параграфов</h1>
 			<table cellpadding="10px">
@@ -21,9 +21,9 @@
 						<img src="/images/avatar04.png" height="121px" width="150px" style="margin: 10px 25px;" alt=""/>
 					</td>
 					<td>
-{% for index, title, description, pubdate in paragraphs %}
+					{% for index, title, description, pubdate in paragraphs %}
 						<a href="/paragraphs/{{index}}.html">§{{index|int}}. {{title}}</a><br/>
-{% endfor %}
+					{% endfor %}
 					</td>	
 				</tr>
 			</table>

@@ -8,32 +8,34 @@ from flask import Flask, render_template, abort, redirect
 
 import data
 
-APP_PREFIX = ""
+flask_app_PREFIX = ""
 
-app = Flask(__name__)
+flask_app = Flask(__name__)
 
-app.jinja_env.trim_blocks = True
+flask_app.jinja_env.trim_blocks = True
+flask_app.jinja_env.lstrip_blocks = True
+flask_app.jinja_env.keep_trailing_newline = False
 
 if (not os.path.exists("templates")):
 	print("Should run from root folder")
 	sys.exit()
 
-@app.route(APP_PREFIX + "/")
+@flask_app.route(flask_app_PREFIX + "/")
 def redirect_root():
 	return redirect("/index.html")
 
 
-@app.route(APP_PREFIX + "/index.html")
+@flask_app.route(flask_app_PREFIX + "/index.html")
 def root():
 	return render_template("index.html", paragraphs=data.paragraphs)
 
 
-@app.route(APP_PREFIX + "/blog.html")
+@flask_app.route(flask_app_PREFIX + "/blog.html")
 def blog():
 	return render_template("blog.html", images_blog=data.images_blog)
 
 
-@app.route(APP_PREFIX + "/my.html")
+@flask_app.route(flask_app_PREFIX + "/my.html")
 def my():
 	return render_template("my.html",
 		images_impression=data.images_impression,
@@ -43,23 +45,23 @@ def my():
 	)
 
 
-@app.route(APP_PREFIX + "/celtic.html")
+@flask_app.route(flask_app_PREFIX + "/celtic.html")
 def celtic():
 	return render_template("celtic.html", programs=data.programs)
 
 
 #rss feeds
-@app.route(APP_PREFIX + "/rss/paragraphs.xml")
+@flask_app.route(flask_app_PREFIX + "/rss/paragraphs.xml")
 def paragraphs_rss():
 	return render_template("rss/paragraphs.xml", paragraphs=reversed(data.paragraphs))
 
 
-@app.route(APP_PREFIX + "/rss/celtic.xml")
+@flask_app.route(flask_app_PREFIX + "/rss/celtic.xml")
 def celtic_rss():
 	return render_template("rss/celtic.xml", programs=reversed(data.programs))
 
 #numbered content
-@app.route(APP_PREFIX + "/paragraphs/<string:index>.html")
+@flask_app.route(flask_app_PREFIX + "/paragraphs/<string:index>.html")
 def paragraph_text(index):
 	try:
 		index_int=int(index)
@@ -76,7 +78,7 @@ def paragraph_text(index):
 		abort(404)
 
 
-@app.route(APP_PREFIX + "/celtic/<string:index>.html")
+@flask_app.route(flask_app_PREFIX + "/celtic/<string:index>.html")
 def celtic_text(index):
 	try:
 		index_int=int(index)
@@ -93,31 +95,32 @@ def celtic_text(index):
 		abort(404)
 
 
-@app.route(APP_PREFIX + "/<path:filename>")
+@flask_app.route(flask_app_PREFIX + "/<path:filename>")
 def everything_else(filename):
 	if (os.path.isfile("templates/" + filename)):
 		return render_template(filename)
 	elif (os.path.isfile("static/" + filename)):
-		return app.send_static_file(filename)
+		return flask_app.send_static_file(filename)
 	else:
 		abort(404)
 
 
 #setting error handlers
-@app.errorhandler(404)
+@flask_app.errorhandler(404)
 def http_not_found(error):
 	return (render_template("404.html"), 404)
 
 
-@app.errorhandler(403)
+@flask_app.errorhandler(403)
 def http_forbidden(error):
 	return (render_template("403.html"), 403)
 
 
-@app.errorhandler(400)
+@flask_app.errorhandler(400)
 def http_forbidden(error):
 	return (render_template("400.html"), 400)
 
 if __name__ == "__main__":
-	app.run(host="0.0.0.0")
+	flask_app.run(host="0.0.0.0")
 
+app = flask_app

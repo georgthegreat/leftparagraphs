@@ -7,7 +7,7 @@
 		<lastBuildDate>Sun, 30 Dec 2012 00:00:00 +0400</lastBuildDate>
 		<pubDate>Sun, 30 Dec 2012 00:00:00 +0400</pubDate>
 		<atom:link href="http://leftparagraphs.com/rss/celtic.xml" rel="self" type="application/rss+xml"/>
-{% for index, title, description, pubdate, filesize, folkradio_filename in programs %}
+	{% for index, title, description, pubdate, filesize, folkradio_filename in programs %}
 		<item>
 			<title>{{index|int}}. {{title}}</title>
 			<description>{{description}}</description>
@@ -16,6 +16,6 @@
 			<enclosure length="{{filesize}}" url="http://media.folkradio.ru/keltskayanov/{{folkradio_filename}}.mp3" type="audio/mpeg"/>
 			<pubDate>{{pubdate}}</pubDate>
 		</item>
-{% endfor %}
+	{% endfor %}
 	</channel>
 </rss>

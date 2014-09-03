@@ -6,7 +6,7 @@
 	celtic: celtic.html
 	about: about.html
 #}
-{% if menuItem == "index" %}
+	{% if menuItem == "index" %}
 		<ul id="menu">
 			<li class="active">
 				<span>Список параграфов</span>
@@ -24,7 +24,7 @@
 				<a href="/about.html">Обо мне</a>
 			</li>
 		</ul>
-{% elif menuItem == "blog" %}
+	{% elif menuItem == "blog" %}
 		<ul id="menu">
 			<li class="inactive">
 				<a href="/index.html">Список параграфов</a>
@@ -42,7 +42,7 @@
 				<a href="/about.html">Обо мне</a>
 			</li>
 		</ul>
-{% elif menuItem == "my" %}
+	{% elif menuItem == "my" %}
 		<ul id="menu">
 			<li class="inactive">
 				<a href="/index.html">Список параграфов</a>
@@ -60,7 +60,7 @@
 				<a href="/about.html">Обо мне</a>
 			</li>
 		</ul>
-{% elif menuItem == "celtic" %}
+	{% elif menuItem == "celtic" %}
 		<ul id="menu">
 			<li class="inactive">
 				<a href="/index.html">Список параграфов</a>
@@ -78,7 +78,7 @@
 				<a href="/about.html">Обо мне</a>
 			</li>
 		</ul>
-{% elif menuItem == "about" %}
+	{% elif menuItem == "about" %}
 		<ul id="menu">
 			<li class="inactive">
 				<a href="/index.html">Список параграфов</a>
@@ -96,7 +96,7 @@
 				<span>Обо мне</span>
 			</li>
 		</ul>
-{% else %}
+	{% else %}
 		<ul id="menu">
 			<li class="inactive">
 				<a href="/index.html">Список параграфов</a>
@@ -114,5 +114,5 @@
 				<a href="/about.html">Обо мне</a>
 			</li>
 		</ul>
-{% endif %}
+	{% endif %}
 

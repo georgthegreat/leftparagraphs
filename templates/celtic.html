@@ -1,27 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
 	<head>
-{% include "components/head.html" %}	
+	{% include "components/head.html" %}	
 		<title>.руЛевые — Кельтская новь</title>
 	</head>
 	<body>
-{% include "components/header.html" %}	
-{% set menuItem = "celtic" %}
-{% include "components/menu.html" %}
+	{% include "components/header.html" %}	
+	{% set menuItem = "celtic" %}
+	{% include "components/menu.html" %}
 		<div class="center">
 			<img src="/images/celtic.png" width="800px" height="268px" alt=""/>
 		</div>
 		<h2>Передачи выходят в эфир на <a href="http://folkradio.ru">ФолкРадио</a> по субботам, в 20:00 по московскому времени.</h2>
 		<h2>Ниже представлены тексты передач и записи эфиров.</h2>	
 		<ul class="content">
-{% for index, title, description, pubdate, filesize, folkradio_filename in programs %}
+		{% for index, title, description, pubdate, filesize, folkradio_filename in programs %}
 			<li>
 				<a href="http://media.folkradio.ru/keltskayanov/{{folkradio_filename}}.mp3" class="image_link">
 					<img src="/images/icons/download_music.svg" width="24px" height="24px" alt="[download]"/>
 				</a>
 				<a href="/celtic/{{index}}.html">{{index|int}}. {{title}}</a>
 			</li>
-{% endfor %}
+		{% endfor %}
 		</ul>
 		<hr/>
 		<div class="navigate">
