@@ -10,3 +10,9 @@ www-configs-install: configs/nginx.conf configs/uwsgi.conf
 	service nginx reload
 	service $(NAME) restart
 
+requirements.txt: .PHONY
+    pip freeze --local | sort --ignore-case | tee $@
+
+.PHONY:
+	;
+
