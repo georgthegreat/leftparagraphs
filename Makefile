@@ -11,8 +11,7 @@ www-configs-install: configs/nginx.conf configs/uwsgi.conf
 	service $(NAME) restart
 
 requirements.txt: .PHONY
-    pip freeze --local | sort --ignore-case | tee $@
+	pip freeze --local | sort --ignore-case | tee $@
 
-.PHONY:
-	;
+.PHONY:;
 

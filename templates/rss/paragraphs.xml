@@ -3,16 +3,16 @@
 	<channel>
 		<title>.руЛевые</title>
 		<description>Заметки о верстке, дизайне, красоте и радости жизни</description>
-		<link>http://leftparagraphs.com/index.html</link>
+		<link>https://leftparagraphs.com/index.html</link>
 		<lastBuildDate>Sun, 30 Aug 2012 00:00:00 +0300</lastBuildDate>
 		<pubDate>Sun, 30 Aug 2012 00:00:00 +0300</pubDate>
-		<atom:link href="http://leftparagraphs.com/rss/paragraphs.xml" rel="self" type="application/rss+xml"/>
+		<atom:link href="https://leftparagraphs.com/rss/paragraphs.xml" rel="self" type="application/rss+xml"/>
 	{% for index, title, description, pubdate in paragraphs %}
 		<item>
 			<title>§{{index|int}}. {{title}}</title>
 			<description>{{description}}</description>
-			<link>http://leftparagraphs.com/paragraphs/{{index}}.html</link>
-			<guid>http://leftparagraphs.com/paragraphs/{{index}}.html</guid>
+			<link>https://leftparagraphs.com/paragraphs/{{index}}.html</link>
+			<guid>https://leftparagraphs.com/paragraphs/{{index}}.html</guid>
 			<pubDate>{{pubdate}}</pubDate>
 		</item>
 	{% endfor %}
