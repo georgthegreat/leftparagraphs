@@ -13,6 +13,10 @@ www-configs-install: configs/nginx.conf configs/uwsgi.conf
 	service nginx reload
 
 
+www-reload:
+	touch /var/run/uwsgi/leftparagraphs.reload
+
+
 requirements.txt: .PHONY
 	pip freeze --local | sort --ignore-case | tee $@
 
