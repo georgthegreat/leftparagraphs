@@ -249,8 +249,7 @@ images_march = [
 images_photop = [
 	("Light.jpg", "Light.jpg", "Lighting effects"),
 	("Yggdrasil.jpg", "Yggdrasil.jpg", "Иггдрасиль"),
-	("Panoramyd01.jpg", "Panoramyd01.jpg", "Панорамида №1"),
-	("Panoramyd02.jpg", "Panoramyd02.jpg", "Панорамида №2"),
+	("Panoramyd.jpg", "Panoramyd.jpg", "Панорамида"),
 	("TextureWood.jpg", "TextureWood.jpg", "Текстура №1: древесина"),
 	("TextureStone.jpg", "TextureStone.jpg", "Текстура №2: камень"),
 	("TextureGrass.jpg", "TextureGrass.jpg", "Текстура №3: трава"),
@@ -259,6 +258,7 @@ images_photop = [
 	("TextureSunflower.jpg", "TextureSunflower.jpg", "Текстура №5: семена подсолнечника"),
 	("TextureCherry.jpg", "TextureCherry.jpg", "Текстура №6: ягоды вишни"),
 	("TextureBricks.jpg", "TextureBricks.jpg", "Текстура №7: кирпичная кладка"),
+	("TextureMasonry.jpg", "TextureMasonry.jpg", "Текстура №7: кирпичная кладка"),
 ]
 
 images_other = [

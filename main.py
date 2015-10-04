@@ -94,7 +94,7 @@ def celtic_text(index):
 		flask.abort(404)
 
 
-@flask_app.route(config.www.app_prefix + "/<path:filename>")
+@flask_app.route(FLASK_APP_PREFIX + "/<path:filename>")
 def everything_else(filename):
 	if os.path.isfile(os.path.join("templates/static", filename)):
 		return flask.render_template("static/" + filename)
