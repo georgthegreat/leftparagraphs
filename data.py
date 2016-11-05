@@ -31,7 +31,7 @@ paragraphs = [
 ]
 
 # (width, height, basename)
-images_blog = [	
+images_blog = [
 	(  69, 534, "162"),
 	( 136, 478, "161"),
 	( 101, 377, "160"),
@@ -207,7 +207,8 @@ images_impression = [
 	("Calo.jpg", "Calo.jpg", "Фрида Кало"),
 	("Mone.png", "Mone.png", "Клод Моне"),
 	("Petrov-Vodkin.jpg", "Petrov-Vodkin.jpg", "Кузьма Сергеевич Петров-Водкин"),
-	("Kandinsky.jpg", "Kandinsky.jpg", "Василий Васильевич Кандинский"),
+	("Kandinsky01.jpg", "Kandinsky01.jpg", "Василий Васильевич Кандинский"),
+	("Kandinsky02.jpg", "Kandinsky02.jpg", "Ещё Кандинский"),
 	("Malevich.jpg", "Malevich.jpg", "Казимир Северинович Малевич")
 ]
 
