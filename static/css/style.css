@@ -155,6 +155,11 @@ div.logo  img {
 	margin: 5px;
 }
 
+div.logo h1 {
+	text-align: left; 
+	display: inline;
+}
+
 img.blog_img {
 	padding: 10px;
 	margin: 0px;
