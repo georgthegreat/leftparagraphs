@@ -12,13 +12,13 @@
 			<h1>Список параграфов</h1>
 			<table cellpadding="10px">
 				<tr style="vertical-align: top;">
-					<td style="width: 1%;">
-						<img src="/images/avatar01.png" height="155px" width="106px" style="margin: 10px 0px;" alt=""/>
-						<img src="/images/avatar02.png" height="100px" width="100px" style="margin: 10px 50px;" alt=""/>
-						<a href="/rss/paragraphs.xml" type="application/rss+xml" class="image_link">
-							<img src="/images/avatar03.svg" height="115px" width="115px" style="margin: 10px 25px;" alt=""/>
+					<td class="avatars">
+						<img src="/images/avatar01.png" height="155px" width="106px" alt=""/>
+						<img src="/images/avatar02.png" height="100px" width="100px" alt=""/>
+						<a href="/rss/paragraphs.xml" type="application/rss+xml" class="center image_link">
+							<img src="/images/avatar03.svg" height="115px" width="115px" alt=""/>
 						</a>
-						<img src="/images/avatar04.png" height="121px" width="150px" style="margin: 10px 25px;" alt=""/>
+						<img src="/images/avatar04.png" height="121px" width="150px" alt=""/>
 					</td>
 					<td>
 					{% for index, title, description, pubdate in paragraphs %}

@@ -108,11 +108,19 @@ li img {
 	text-align: center;
 }
 
+.italic {
+	font-style: italic;
+}
+
 .epigraph  {
 	width: 1%;
 	text-align: left;
 	font-style: italic;
 	white-space: nowrap;
+}
+
+.epigraph span.signature {
+	float: right;
 }
 
 .navigate {
@@ -130,7 +138,7 @@ li img {
 	max-width: 40px;
 }
 
-/* класс для блока "лирическое отступление" в параграфахы */
+/* класс для блока "лирическое отступление" в параграфах */
 .lyrics {
 	border: 1px solid #000000;
 	color: #000000;
@@ -153,6 +161,22 @@ div.logo  img {
 	background-color: #888888;
 	vertical-align: middle;
 	margin: 5px;
+}
+
+td.avatars {
+	width: 1%;
+}
+
+td.avatars img:nth-child(0) {
+	margin: 10px 0px;
+}
+
+td.avatars img:nth-child(1) {
+	margin: 10px 50px;
+}
+
+td.avatars img:nth-child(2) {
+	margin: 10px 25px;
 }
 
 div.logo h1 {
