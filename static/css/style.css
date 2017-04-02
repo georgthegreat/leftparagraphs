@@ -57,6 +57,14 @@ a.image_link {
 	text-decoration: none;
 }
 
+.large {
+	font-size: 250%;
+}
+
+.huge {
+	font-size: 2000%;
+}
+
 a.image_link span {
 	text-decoration: underline;
 }
@@ -161,6 +169,10 @@ div.logo  img {
 	background-color: #888888;
 	vertical-align: middle;
 	margin: 5px;
+}
+
+tr {
+	vertical-align: top;
 }
 
 td.avatars {
