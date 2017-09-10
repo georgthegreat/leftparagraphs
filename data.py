@@ -264,7 +264,8 @@ images_photop = [
 	("TextureSunflower.jpg", "TextureSunflower.jpg", "Текстура №5: семена подсолнечника"),
 	("TextureCherry.jpg", "TextureCherry.jpg", "Текстура №6: ягоды вишни"),
 	("TextureBricks.jpg", "TextureBricks.jpg", "Текстура №7: кирпичная кладка"),
-	("TextureMasonry.jpg", "TextureMasonry.jpg", "Текстура №7: кирпичная кладка"),
+	("TextureBricks_2.jpg", "TextureBricks_2.jpg", "Текстура №9: ещё кирпичная кладка"),
+	("TextureMasonry.jpg", "TextureMasonry.jpg", "Текстура №9: некирпичная кладка"),
 ]
 
 images_other = [
