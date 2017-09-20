@@ -32,6 +32,7 @@ paragraphs = [
 
 # (width, height, basename)
 images_blog = [
+	(  56, 945, "164"),
 	(  36, 375, "163"),
 	(  69, 534, "162"),
 	( 136, 478, "161"),
