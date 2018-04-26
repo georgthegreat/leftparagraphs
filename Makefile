@@ -24,8 +24,7 @@ www-reload:
 	touch /var/run/uwsgi/leftparagraphs.reload
 
 
-requirements.txt: .PHONY
-	pip freeze --local | sort --ignore-case | tee $@
+requirements.txt:
+	pip list --not-required --local --format=freeze | sort --ignore-case | tee $@
 
-.PHONY:;
-
+.PHONY: requirements.txt
