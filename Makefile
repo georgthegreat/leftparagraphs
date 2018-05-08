@@ -25,6 +25,6 @@ www-reload:
 
 
 requirements.txt:
-	pip list --not-required --local --format=freeze | sort --ignore-case | tee $@
+	pip list --local --format=freeze | sort --ignore-case | tee $@
 
 .PHONY: requirements.txt
