@@ -1,0 +1,18 @@
+[Unit]
+Description=My homepage servant
+Requires=network.target
+
+[Service]
+Environment=LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8
+User=root
+Group=root
+ExecStartPre=/bin/mkdir /var/run/uwsgi
+ExecStartPre=/bin/chmod 775 /var/run/uwsgi
+ExecStartPre=/bin/chown www-data:www-data /var/run/uwsgi
+ExecStart=/usr/bin/sudo -u www-data /usr/bin/uwsgi --logto /var/log/uwsgi/app/leftparagraphs.log --logto2 /var/log/uwsgi/app/leftparagraphs.log --ini /etc/uwsgi/apps-enabled/leftparagraphs.conf
+Restart=always
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+
