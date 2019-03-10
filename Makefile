@@ -1,16 +1,13 @@
 NAME := leftparagraphs
 DHPARAM = /etc/nginx/conf/leftparagraphs.com/dh_param.pem
 
-www-configs-install: configs/nginx.conf configs/uwsgi.conf
+configs-install: configs/nginx.conf configs/uwsgi.conf
 	#installing directory for logs
 	install --mode=755 --owner=www-data --group=www-data --directory /var/log/uwsgi/app
 	#configuring uwsgi
 	install --owner=www-data --group=www-data configs/uwsgi.conf /etc/uwsgi/apps-available/$(NAME).conf
 	ln -sf /etc/uwsgi/apps-available/$(NAME).conf /etc/uwsgi/apps-enabled/$(NAME).conf
-	#creating upstart/systemd service
-	install --mode=644 configs/$(NAME).conf /etc/init
 	install --mode=644 configs/$(NAME).service /etc/systemd/system
-	$(shell initctl reload-configuration && stop $(NAME); start $(NAME) || true)
 	$(shell systemctl daemon-reload && systemctl enable $(NAME).service && systemctl stop $(NAME).service; systemctl start $(NAME).service || true)
 	#configuring nginx
 	if [ ! -f "$(DHPARAM)" ]; \
@@ -26,7 +23,7 @@ www-configs-install: configs/nginx.conf configs/uwsgi.conf
 	service nginx reload
 
 
-www-reload:
+reload:
 	touch /var/run/uwsgi/leftparagraphs.reload
 
 
