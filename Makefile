@@ -28,6 +28,7 @@ reload:
 
 
 requirements.txt:
-	pip list --local --format=freeze | sort --ignore-case | tee $@
+	pip freeze --isolated --requirement requirements.txt | grep -B1000 'added by pip freeze' | grep -v 'added by pip freeze' > requirements.txt.tmp
+	mv -f requirements.txt.tmp requirements.txt
 
 .PHONY: requirements.txt
